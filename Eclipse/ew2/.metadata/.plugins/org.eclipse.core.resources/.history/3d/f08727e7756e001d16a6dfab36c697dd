@@ -1,0 +1,30 @@
+package proj;
+import java.util.*;
+import java.io.*;
+class ErrorOccured
+{   
+     int m(char a,char b)
+    {
+return 1*(Integer.parseInt(Character.toString(a))%Integer.parseInt(Character.toString(b))); 
+    }
+    int n(char a, char b)
+    {
+return m(a,b);
+    }
+}public class ErrorShown extends ErrorOccured
+{public static void main(String args[])
+    {ErrorOccured obj=new ErrorOccured();
+        try{
+            obj.n(args[0].charAt(0),args[0].charAt(1));
+        }catch(NumberFormatException E)
+        {
+System.out.println(E);
+        }catch(Exception E)
+        {
+System.out.println(E);
+        }finally{
+            System.out.println("ALL EXECUTED");
+        }
+    }//main
+}//class
+

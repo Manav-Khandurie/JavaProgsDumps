@@ -1,0 +1,6 @@
+package proj;
+public interface computearea
+{
+	public static final float PI=3.142f;
+	void area();
+}

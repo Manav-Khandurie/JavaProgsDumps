@@ -1,0 +1,41 @@
+import java.util.*;
+class calculation
+{
+	double rate;
+	double trunk(double duration, int type)
+	{
+		rate=0.5;//normal rate	
+		return (rate*duration);
+	}
+	double trunk(int type, double duration)
+	{
+		rate=0.1;//urgent rate
+		return (rate*duration);
+	}
+}//calculation
+public class telephone 
+{
+	public static void main(String args[])
+	{
+		calculation obj=new calculation();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the duration of call:-");
+		double duration=sc.nextDouble();
+		System.out.println("Enter \n 1-Urgent call \n 2-Normal call");
+		int type=sc.nextInt();
+		double ans=0.0;
+		switch(type)
+		{
+			case 1:
+				ans=obj.trunk(type,duration);
+				break;
+			case 2:
+				ans=obj.trunk(duration,type);
+				break;
+			default:
+				System.out.println("Incorrect Input");
+				System.exit(0);
+		}
+		System.out.println("The total payable price is :-"+ans);
+	}//main
+}//class

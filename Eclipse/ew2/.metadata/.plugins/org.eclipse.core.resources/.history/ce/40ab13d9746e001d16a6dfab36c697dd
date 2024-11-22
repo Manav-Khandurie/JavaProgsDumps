@@ -1,0 +1,21 @@
+package proj;
+import java.util.*;
+public interface Test
+{	double square(double num);	
+}
+class Airthmetic implements Test
+{	public double square(double num)
+	{	return num*num;
+	}
+}public class ToTestInt
+{	public static void main(String args[])
+	{	Airthmetic obj=new Airthmetic();
+		Test t;//refrence variable
+		t=obj;//coping obj to t
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter:-");
+		double num=sc.nextDouble();
+		double ans=t.square(num);//dynamic method dispatch
+		System.out.println("ANS :-"+ans);
+	}//main
+}//class

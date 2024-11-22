@@ -1,0 +1,14 @@
+package manav;
+
+public class FetchJDBCData {
+
+	public FetchJDBCData() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,28 @@
+package manav;
+class A{  
+void msg(){System.out.println("Hello");}  
+}  
+class B extends A{  
+ void msg(){System.out.println("Welcome");}  
+}  
+public class Class extends B {
+	int i=0;
+	Class(int i){
+		this.i=5;
+	}
+	public Object clone()throws CloneNotSupportedException {
+		return super.clone();
+	}
+	public static void main(String args[]) {
+		Class obj=new Class(5),obj1 ;
+		try {
+			 obj1=(Class) obj.clone();
+			 System.out.println(obj1.i);
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+
+}

@@ -1,0 +1,46 @@
+package manav;
+import java.sql.*;
+public class TestJDBC {
+	public TestJDBC() {
+		// TODO Auto-generated constructor stub
+	}
+	public static void main(String[] args) 
+	{
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver"); //Or any other driver
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","manav");
+			Statement stmt=conn.createStatement();
+			ResultSet rs=stmt.executeQuery("select * from Employ");
+			try{while(rs.next()) 
+				{	System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
+				}
+			}catch(SQLException e) {}
+			int result=stmt.executeUpdate("delete from Emlpoy where id=3");  
+			System.out.println(result+" records affected");  
+			ResultSet rs1=stmt.executeQuery("select * from Employ");
+			try{while(rs1.next()) 
+				{	System.out.println(rs1.getInt(1)+" "+rs1.getString(2)+" "+rs1.getString(3));
+				}
+			}catch(SQLException e) {}
+			conn.close();
+		}
+		catch(ClassNotFoundException e)
+		{
+			System.out.println(e);
+			e.printStackTrace();
+		}
+		/**catch(SQLException e)
+		{
+			System.out.println(e);
+			e.printStackTrace();
+		}**/
+		catch(Exception e)
+		{
+			System.out.println(e);
+			e.printStackTrace();
+		}
+		finally {
+			System.out.println("Done");
+		}
+		}
+	}

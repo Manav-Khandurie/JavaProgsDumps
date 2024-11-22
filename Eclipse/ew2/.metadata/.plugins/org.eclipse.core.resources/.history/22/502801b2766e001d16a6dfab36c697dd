@@ -1,0 +1,50 @@
+package proj;
+import java.util.*;
+public class Occurrence
+{
+	String str;
+	Scanner sc=new Scanner(System.in);
+	void checkfirst(String search)
+	{
+		int ans=str.indexOf(search);
+		if(ans!=-1)
+		System.out.println("The first occurrence of \""+search+"\" is @ : "+ans);
+		else
+		System.out.println("Not Found ");
+	}
+	void checklast(String search)
+	{
+		int ans=str.lastIndexOf(search);
+		if(ans!=-1)
+		System.out.println("The last occurrence of \""+search+"\" is @ : "+ans);
+		else
+		System.out.println("Not Found ");
+	}
+	void choice()
+	{	System.out.println(" Enter :- \n 1: Search from first \n 2: Search from last");
+		int choice=sc.nextInt();
+    		sc.nextLine();//clears buffer
+		System.out.println("Enter search value :-");
+		String search=sc.nextLine();
+		switch(choice)
+		{
+			case 1:
+			checkfirst(search);
+			break;
+			case 2:
+			checklast(search);
+			break;
+			default:
+			System.out.println("Incorrect Input");
+		}
+	}
+	void input()
+	{	System.out.println("Enter the string :-");
+		str=sc.nextLine();
+    		choice();
+	}
+	public static void main(String args[])
+	{	Occurrence obj=new Occurrence();
+		obj.input();
+	}//
+}

@@ -1,0 +1,12 @@
+package mypack;
+import pack.A;
+public class B extends A {
+	
+	public void dis() {
+		System.out.println("In mypack ,class B, dis");
+	}
+	public static void main(String args[]) {
+		A obj=new A();
+		obj.dis();
+	}
+}

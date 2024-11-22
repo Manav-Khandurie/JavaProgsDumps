@@ -1,0 +1,9 @@
+package manav;
+
+public class Custom {
+
+	public Custom() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

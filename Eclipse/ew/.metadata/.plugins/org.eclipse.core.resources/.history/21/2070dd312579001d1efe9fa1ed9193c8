@@ -1,0 +1,9 @@
+package manav;
+
+public class JDBCEndSem {
+
+	public JDBCEndSem() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

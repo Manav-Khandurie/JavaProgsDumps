@@ -1,0 +1,45 @@
+package proj;
+import java.util.*;
+class Employee
+{
+	String name,id;
+	double salary;
+	Employee(String name,String id,double salary)
+	{	this.name=name;
+		this.id=id;
+		this.salary=salary;
+	}
+	String name()
+	{	return name;
+	}
+	double salary()
+	{	return salary;
+	}
+	void Increasesalary(double salaryp)
+	{	this.salary*=salaryp;
+	}
+	void display()
+	{	System.out.print(name+"\t"+salary+"\t"+id);
+	}//display
+}//Employee
+public class Manager extends Employee
+{	String department;
+	Manager(String name,String id,double salary,String department)
+	{	super(name,id,salary);
+		this.department=department;
+	}
+	void display()
+	{	System.out.print(department+"\t");
+		super.display();
+	}//display
+    public static void main(String args[])
+    {		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter :- \t Department \t Name\t Salary \t ID \n");
+		String name=sc.next();
+		String id=sc.next();
+		String department=sc.next();
+		double salary=sc.nextDouble();
+		Manager obj=new Manager(name,id,salary,department);
+		obj.display();
+	}//main
+}//Manager

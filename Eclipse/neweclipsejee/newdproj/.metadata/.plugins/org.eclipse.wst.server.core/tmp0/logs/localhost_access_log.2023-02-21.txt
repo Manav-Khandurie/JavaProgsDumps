@@ -1,0 +1,4 @@
+127.0.0.1 - - [21/Feb/2023:21:16:57 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [21/Feb/2023:21:16:59 +0530] "GET /uzmalab/NewFile.jsp HTTP/1.1" 200 72
+0:0:0:0:0:0:0:1 - - [21/Feb/2023:21:17:08 +0530] "GET /uzmalab/index.html HTTP/1.1" 200 210
+0:0:0:0:0:0:0:1 - - [21/Feb/2023:21:17:11 +0530] "GET /uzmalab/NewFile.jsp?uname=a&pass=a HTTP/1.1" 200 66

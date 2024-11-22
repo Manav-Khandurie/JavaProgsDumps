@@ -1,0 +1,14 @@
+package manav;
+
+public class TestAbstract {
+
+	public static void main(String args[]) {
+		
+		Shape obj[]=new Shape[3];
+		obj[0]=new Rectangle(10,20);
+		obj[1]=new Square(10);
+		obj[2]=new Circle(5);
+		obj[0].display();
+	}
+
+}

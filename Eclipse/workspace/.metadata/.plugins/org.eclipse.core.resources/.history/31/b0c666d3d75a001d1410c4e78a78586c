@@ -1,0 +1,33 @@
+package manav;
+import java.sql.*;
+public class FetchJDBCData {
+	public static void main(String[] args) {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver"); // Or any other driver
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "manav");
+			Statement stmt = conn.createStatement();
+			// stmt.executeUpdate("insert into Employ values(4,\"Mohit\",\"40000\");");
+			stmt.executeUpdate("delete from Employ where name=\"Mohit\"");
+			// display
+			ResultSet rs = stmt.executeQuery("select * from Employ;");
+			try {
+				while (rs.next()) {
+					System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getString(3));
+				}
+			} catch (SQLException e) {
+			}
+			conn.close();
+		} catch (ClassNotFoundException e) {
+			System.out.println(e);
+			e.printStackTrace();
+		} catch (SQLException e) {
+			System.out.println(e);
+			e.printStackTrace();
+		} catch (Exception e) {
+			System.out.println(e);
+			e.printStackTrace();
+		} finally {
+			System.out.println("Done");
+		}
+	}
+}

@@ -1,0 +1,9 @@
+package manav;
+
+public class TestAbstract {
+
+	public TestAbstract() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

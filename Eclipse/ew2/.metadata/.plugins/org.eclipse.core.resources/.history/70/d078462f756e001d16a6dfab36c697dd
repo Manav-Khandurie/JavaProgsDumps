@@ -1,0 +1,4 @@
+package proj;
+public interface d
+{	double square(double num);	
+}

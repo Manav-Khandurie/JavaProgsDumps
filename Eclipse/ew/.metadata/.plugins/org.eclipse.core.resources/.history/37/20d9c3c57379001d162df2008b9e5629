@@ -1,0 +1,12 @@
+package manav;
+import java.util.*;
+public class ArrayListEg {
+	public static void main(String args[]) {
+		ArrayList<Integer> al=new ArrayList<Integer>();
+		System.out.println("AL printing");
+		al.add(1);al.add(2);al.add(3);al.add(4);
+		System.out.println(al);
+		for(Integer i:al)
+			System.out.print(i);
+	}
+}

@@ -1,0 +1,37 @@
+package manav;
+//import java.sql.*;
+import java.sql.*;
+import java.sql.Connection;
+//import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+//import java.sql.SQLException;
+public class TestJDBC {
+
+	public TestJDBC() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) 
+	{
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver"); //Or any other driver
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","manav");
+			Statement stmt=conn.createStatement();
+			ResultSet rs=stmt.executeQuery("select * from Employ");
+			while(rs.next()) 
+			{
+			System.out.println(rs.getInt(1)+" "+rs.getString(2));
+			conn.close();
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			e.printStackTrace();
+		}
+		finally {
+			System.out.println("Done");
+		}
+		}
+	}

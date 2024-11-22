@@ -1,0 +1,23 @@
+package manav;
+import java.util.*;
+public class ArrayListEg {
+	public static void main(String args[]) {
+		ArrayList<Integer> al=new ArrayList<Integer>();
+		System.out.println("AL printing");
+		al.add(1);al.add(2);al.add(3);al.add(4);
+		System.out.println(al);
+		for(Integer i:al)
+			System.out.print(i+"\t");
+		System.out.println();
+		for(int i=0;i<al.size();i++)
+			System.out.print(al.get(i)+"\t");
+		Iterator itr=al.iterator();
+		System.out.println();
+		while(itr.hasNext())
+			System.out.print(itr.next()+"\t");
+		ArrayList<Integer> al1=(ArrayList<Integer>) al.clone();
+		Collections.reverse(al1);
+		System.out.println("\n"+al+"\n"+al1);
+		al.remove(0);
+	}
+}

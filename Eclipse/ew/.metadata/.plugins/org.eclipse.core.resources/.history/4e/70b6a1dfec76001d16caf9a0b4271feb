@@ -1,0 +1,14 @@
+package manav;
+
+public class CustomE extends Exception{
+
+	CustomE(String msg){
+		super(msg);
+	}
+}
+class TestCustomException{
+	
+	public static void main(String args[]) {
+		
+	}
+}

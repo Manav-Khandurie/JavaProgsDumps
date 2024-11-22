@@ -1,0 +1,31 @@
+package manav;
+import java.sql.*;
+public class JDBCEndSem {
+
+	public static void main(String args[]) {
+		
+		int salary[]=new int[100];
+		String name[]=new String[100];
+		try {
+			//Class.forName("com.msql.cj.jdbc.Driver");
+			Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","manav");
+			Statement stmt=conn.createStatement();
+			ResultSet rs=stmt.executeQuery("select * from employee;");
+			int k=0;
+			while(rs.next()) {
+				name[k]=rs.getString(2);
+				salary[k]=rs.getInt(3);
+				k++;
+			}
+			PreparedStatement pstmt=conn.prepareStatement("update employee set salary=? where name=?");
+			for(int i=0;i<k;i++) {
+				pstmt.setInt(1, salary[i]+(int)(salary[i]*0.1));
+				pstmt.setString(2, name[k]);
+				pstmt.executeUpdate();
+			}
+			System.out.println("Done with execution check in mysql");
+			conn.close();
+			}catch(Exception e) {e.printStackTrace();}
+	}
+
+}

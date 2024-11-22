@@ -1,0 +1,14 @@
+package proj;
+
+public interface GPI {
+ 
+    // Default method
+    default void show()
+    {
+ 
+        // Print statement
+        System.out.println("Default GPI");
+    }
+    void show1();
+   
+}

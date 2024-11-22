@@ -1,0 +1,6 @@
+package mypack;
+import pack.A;
+public class B extends A {
+	
+	
+}

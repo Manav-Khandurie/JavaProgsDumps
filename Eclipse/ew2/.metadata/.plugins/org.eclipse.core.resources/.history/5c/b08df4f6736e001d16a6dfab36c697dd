@@ -1,0 +1,68 @@
+package proj;
+//Herical inheritance
+class Player
+{
+	String name;int age;double height;
+	Player(String name,int age,double height)
+	{	this.name=name;
+		this.age=age;
+		this.height=height;
+	}
+	void details()
+	{	System.out.println(this.name+"\t"+age+"\t"+this.height);
+	}
+}//Player
+class Cricket_Player extends Player
+{
+	String pos,teamname;
+	Cricket_Player(String pos,String teamname,String name,int age, double height)
+	{
+		super(name,age,height);
+		this.pos=pos; 
+		this.teamname=teamname;
+	}
+	void deatils()
+	{	super.details();
+		System.out.println(this.pos+"\t"+this.teamname);
+	}
+}//Cricket Player
+class Football_Player extends Player
+{
+	String pos,teamname;
+	Football_Player(String pos,String teamname,String name,int age, double height)
+	{
+		super(name,age,height);
+		this.pos=pos; 
+		this.teamname=teamname;	
+	}
+	void deatils()
+	{	super.details();
+		System.out.println(this.pos+"\t"+this.teamname);
+	}	
+}//Football Player
+class Hockey_Player extends Player
+{
+	String pos,teamname;
+	Hockey_Player(String pos,String teamname,String name,int age, double height)
+	{
+		super(name,age,height);
+		this.pos=pos; 
+		this.teamname=teamname;
+	}
+	void deatils()
+	{	super.details();
+		System.out.println(this.pos+"\t"+this.teamname);
+	}
+}//Hockey Player
+public class Execution
+{
+	public static void main(String args[])
+	{
+		Hockey_Player ob1=new Hockey_Player("Foward","Doon","naman",19,1.67);
+		ob1.deatils();
+		Football_Player ob2=new Football_Player("Mid","MU","manav",20,1.87);
+		ob2.deatils();
+		Cricket_Player ob3=new Cricket_Player("Fielder","CSK","ajay",19,1.80);
+		ob3.deatils();
+	}
+}//Execution

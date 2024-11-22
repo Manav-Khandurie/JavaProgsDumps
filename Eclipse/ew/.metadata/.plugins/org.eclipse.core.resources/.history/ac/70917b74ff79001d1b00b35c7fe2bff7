@@ -1,0 +1,7 @@
+package manav;
+
+public interface ShapeI {
+
+	public void area();
+	public void circum();
+}

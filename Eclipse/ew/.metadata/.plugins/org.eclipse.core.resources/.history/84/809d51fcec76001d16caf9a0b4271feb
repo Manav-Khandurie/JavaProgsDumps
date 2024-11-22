@@ -1,0 +1,14 @@
+package manav;
+public class TestCustomException{
+	
+	public static void main(String args[]) {
+		
+		try {
+			throw new CustomE("THIS IS A CUSTOM MESSAGE");
+		}
+		catch(CustomE e) {
+			e.getMessage();
+			e.printStackTrace();
+		}
+	}
+}

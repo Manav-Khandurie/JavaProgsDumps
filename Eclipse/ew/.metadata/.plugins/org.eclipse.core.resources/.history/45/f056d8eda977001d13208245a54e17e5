@@ -1,0 +1,43 @@
+package manav;
+//showing deadlock
+public class Threadex5 extends Thread implements Runnable
+{
+    static String a="a",b="b";
+    public void run()
+    {
+        if((currentThread().getName()).equals("a"))
+        {
+			synchronized(a)
+			{	System.out.println("Thread a: locked resource 1"); 
+				try {
+					Thread.currentThread().sleep(100);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				synchronized(b)
+				{	System.out.println("Thread a: locked resource 2"); 
+				}
+	        }
+		}
+        else
+        {
+			synchronized(b)
+			{	System.out.println("Thread b: locked resource 2"); 
+				try {
+					Thread.currentThread().sleep(100);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				synchronized(a)
+				{	System.out.println("Thread b: locked resource 1"); 
+				}
+	        }
+		}
+    }
+    public static void main(String args[])
+    {
+	    Thread t1=new Thread(new Threadex5(),"a");
+	    Thread t2=new Thread(new Threadex5(),"b");
+		t1.start();t2.start();      
+	}
+}

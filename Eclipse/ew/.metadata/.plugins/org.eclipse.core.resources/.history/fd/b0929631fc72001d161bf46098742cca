@@ -1,0 +1,9 @@
+package manav;
+
+public class Threadex {
+
+	public Threadex() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,16 @@
+package manav;
+class A{  
+void msg(){System.out.println("Hello");}  
+}  
+class B extends A{  
+void msg(){System.out.println("Welcome");}  
+}  
+public class Class extends B {
+
+	public static void main(String args[]) {
+		Class obj=new Class();
+		obj.msg();
+	}
+	
+
+}
